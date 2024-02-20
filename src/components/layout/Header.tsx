@@ -4,15 +4,10 @@ import Link from "next/link";
 import { ThemeToggle } from "../ThemToggle";
 import { Typography } from "../ui/Typography";
 import Image from "next/image";
-import { Login } from "./Login";
+import { LoginButton } from "@/features/auth/LoginButton";
+import { AuthButton } from "@/features/auth/AuthButton";
 
 export function Header() {
-  async function create() {
-    "use server";
-
-    // ...
-  }
-
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
@@ -29,8 +24,8 @@ export function Header() {
         </div>
 
         <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-1">
-            <Login />
+          <nav className="flex items-center gap-2">
+            <AuthButton />
             <ThemeToggle />
           </nav>
         </div>
